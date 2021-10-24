@@ -88,4 +88,43 @@ str_two = "ass"
 str_three = str_one + " " + str_two
 print(str_three)
 
+username = "bluethecat"
+print("Hello there and Welcome to the game " + username)
 
+# You can also use the '+=' operator
+str_one = "ice"
+str_one += " cream"
+print(str_one)
+
+name = "colt"
+name += " steele"
+print(name  )
+
+people = 99
+people += 1 
+# Output = 98
+people = 99
+people -= 10
+# Output = 89
+
+# Formatting strings:
+# The new way in Python > 3.6 = 'f' strings
+x = 100
+formatted = f"I've told you {x} times already!"
+print(formatted)
+
+guess = 33
+print(f"Your guess of {guess} is incorrect.")
+print(f"Your guess of {guess + 10} is correct!!")
+
+# Old way < Python 3.5
+x = 10
+formatted = "I've told you {} times already!".format(10)
+print(formatted)
+
+# Converting data types
+decimal = 3.1426568
+integer = int(decimal)
+# Output = 3
+
+# round(thing to round, how many decimal points)
