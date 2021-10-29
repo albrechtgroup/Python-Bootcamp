@@ -93,3 +93,7 @@ else:
     print("Please enter an age. Dumb shit.")
 
 
+# Creating a random number
+num = random.randint(1, 100)
+print(num)
+
