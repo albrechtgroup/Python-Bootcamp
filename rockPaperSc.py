@@ -1,4 +1,5 @@
 import random
+from typing import ChainMap
 #######################
 # Rock, Paper, Scissors VI
 
@@ -35,37 +36,52 @@ import random
 
 ######################
 # Version II
+playerWins = 0
+computerWins = 0
+winningScore = 3
 
-player = input("Player, make your selection.").lower()
-rand_num = random.randint(0, 2)
-if rand_num == 0:
-    computer = "rock"
-elif rand_num == 1:
-    computer = "paper"
-else:
-    computer = "scissors"
-print(f"Computer selects {computer}")
+while playerWins < winningScore and computerWins < winningScore:
+    print(f"Player Score: {playerWins} Computer Score: {computerWins}")
+    print("*--== Rock ==--*")
+    print("*--== Paper ==--*")
+    print("*--== Scissors ==--*")
 
-if player == computer:
-    print("Its a TIE!")
-elif player == "rock":
-    if computer == "scissors":
-        print("You Win!!!")
-    elif computer == "paper":
-        print("Computer wins!")
-elif player == "paper":
-    if computer == "rock":
-        print("You Win!!!")
-    elif computer == "scissors":
-        print("Computer wins!")
-elif player == "scissors":
-    if computer == "rock":
-        print("Computer wins!")
-    elif computer == "paper":
-        print("You Win!!!")
-else:
-    print("Please Enter Valid Object.")
+    player = input("(Enter your selection): ").lower()
+    if player == "quit" or player == "q":
+        break
+    rand_num = random.randint(0, 2)
+    if rand_num == 0:
+        computer = "rock"
+    elif rand_num == 1:
+        computer = "paper"
+    else:
+        computer = "scissors"
+    print(f"Computer selects: {computer}")
 
-# Creating a random number
-num = random.randint(1, 100)
-print(num)
+    if player == computer:
+        print("Its a TIE!")
+    elif player == "rock":
+        if computer == "scissors":
+            print("You Win!!!")
+            playerWins += 1
+        elif computer == "paper":
+            print("Computer wins!")
+            computerWins += 1
+    elif player == "paper":
+        if computer == "rock":
+            print("You Win!!!")
+            playerWins += 1
+        elif computer == "scissors":
+            print("Computer wins!")
+            computerWins += 1
+    elif player == "scissors":
+        if computer == "rock":
+            print("Computer wins!")
+            computerWins += 1
+        elif computer == "paper":
+            print("You Win!!!")
+            playerWins += 1
+    else:
+        print("Please Enter Valid Object.")
+print(
+    f"FINAL SCORES === Player: {playerWins} Computer: {computerWins}")
