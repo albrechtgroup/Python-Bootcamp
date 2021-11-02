@@ -44,7 +44,7 @@ for l in nestedList:
         print(val)
 # Output = 1 thru 9 each on seperate lines
 
-# Nested list Comprehention:
+# Nested list Comprehension:
 nestedList = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 [[print(val) for val in l] for l in nestedList]
 # Output = 1 thru 9 each on seperate lines. Same above
