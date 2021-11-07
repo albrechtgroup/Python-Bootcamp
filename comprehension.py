@@ -58,3 +58,14 @@ print(toe)
 
 ################################
 # Dictionary Comprehension:
+# Syntax  {__:__for __in__}
+
+numbers = dict(first=1, second=2, third=3)
+squared_numbers = {key: value ** 2 for key,value in numbers.items()}
+print(squared_numbers)
+
+# Conditional logic with dictionaries:
+num_list = [1,2,3,4]
+{ num:("even" if num % 2 ==0 else "odd") for num in num_list }
+# Output in 'Powershell' = 
+# {1: 'odd', 2: 'even', 3: 'odd', 4: 'even'}
