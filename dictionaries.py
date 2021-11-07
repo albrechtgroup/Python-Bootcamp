@@ -77,57 +77,68 @@ instructor = {
 ##############################
 # Dictiaonary Methods:
 
+# .clear() will clear the entire
+instructor.clear()
 
+# .copy() will copy the entire dictionary
+d = dict(a=1,b=2,c=3)
+c = d.copy()
+print(c)
+# Output = {'a': 1, 'b': 2, 'c': 3}
+c is d
+# Output = False
 
+# .fromkeys Creates key-value pairs from comma 
+#  seperated values.
+# Usually used to generater default values.
+{}.fromkeys("a", "b")
+# Output = {'a': 'b'}
+{}.fromkeys(["email"], 'unknown')
+# Output = {'email': 'unknown'}
+{}.fromkeys("a", [1,2,3,4,5])
+# Output = {'a': [1, 2, 3, 4, 5]}
+kv3 = {}.fromkeys("a", [1, 2, 3, 4, 5])
+print(kv3)
+# Output = {'a': [1, 2, 3, 4, 5]}
 
+# .get() 
+# Retreives a key in an object and returns 'None'
+# instead of 'KeyError' if key does not exist.
+d = dict(a=1, b=2, c=3)
+d['a']
+# Output = 1  
+d['b']
+# Output = 2
 
+# .pop()
+# Different in .pop for lists in that we must provide
+# the 'key' of what we want to remove.
+d.pop('b')
+# Output = 2  (the value of 'b')
+print(d)
+# Output = {'a': 1, 'c': 3}
+ 
+# popitem() Removes a random key in a dictionary.
 
+# .update() Updates keys and values in a dictionary
+#  with another set of key/value pairs
 
+###############################
+# Spotify Playlist:
+playlist = {
+    'title': 'Patagonia bus', 
+    'author': 'Colt Steele', 
+    'songs': [
+        {'title': 'song1', 'artist': ['That Ass'], 'duration': 3.7}, 
+        {'title': 'song2', 'artist': ['Waist', 'DjCat'], 'duration': 2.5},
+        {'title': 'song3', 'artist': ['Beetlejuice'], 'duration': 5.25}
+    ]
+}
+print(playlist)
 
+playLength = 0
+for song in playlist['songs']:
+    playLength += song['duration']
+print(playLength)
 
-
-
-
-##############################
-# Cher Hin CHong:
-
-#   dictionary = {}
-# Do not have index numbers, no order
-# key: value pairs, like objects in JS
-city_weather = {"Singapore": 30, "Paris": 15, "Sydney": 19, "Tokyo": 15}
-city_weather["Brooklyn"] = 77
-# to add to dictionary or change exist value
-# Output = {"Singapore": 30, "Paris": 15, "Sydney": 19, "Tokyo": 15, "Brooklyn": 77}
-del city_weather["Singapore"]
-# Output = {"Parris": 15, etc} minus Singapore
-print(city_weather["Brooklyn"])
-# Output = 77
-
-# 'is'
-num_1 = 13
-print(type(num_1) is int)
-# Output = True
-num_2 = 11.3
-print(type(num_2) is float)
-# Output = True
-
-# 'is not'
-print(type(num_2) is not str)
-# Output = True
-
-# Membership Operators:
-# Use to check if a value is found within a
-# sequence
-
-
-# 'not in'
-print(text_2 not in text_1)
-# Output = False, Hello is 'in' Hello World
-print(text_3 in text_1)
-# Output = False, lowercase hello is Not in
-
-
-
-
-
-
+# print(song['duration'])
