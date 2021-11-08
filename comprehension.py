@@ -69,3 +69,17 @@ num_list = [1,2,3,4]
 { num:("even" if num % 2 ==0 else "odd") for num in num_list }
 # Output in 'Powershell' = 
 # {1: 'odd', 2: 'even', 3: 'odd', 4: 'even'}
+
+
+#################################
+# Set Comprehension:
+{x**2 for x in range(10)}
+# Output = {0, 1, 64, 4, 36, 9, 16, 49, 81, 25}
+# The numbers 0-9 squared..
+
+# This creates a dictianary version of above
+{x:x**2 for x in range(10)}
+# Output = 
+# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+
